@@ -1,0 +1,33 @@
+// Javascript Execution Context
+- JS is single threaded
+- Global Execution Context {}, this
+- Function Execution Context
+- JS code {} in two phase:
+    1. Memory Creation phase (Memory Allocation)
+    2. Execution Phase (Only Execution)
+    e.g.
+    let val1 = 10
+    let val2 = 5
+    function addNum(num1, num2){
+        let total = num1 + num2
+        return total
+    }
+    let result1 = addNum(val1, val2)
+    let result2 = addNum(3, 4)
+
+Execution step-by-step Process:
+step 1: Global execution allocates in this
+step 2: Memory Phase alloacted undefined in all variables(val1,val2,result1,result2) and definition in function(addNum)
+step 3: 
+    - Execution Phase allocates values in variables
+    - For each function seperate execution context + environment gets created which has both Memory and Execution Phase of its own for each time its called.
+    - In the end, function returns in Global Execution Context or Parent Execution Context
+    - Then Function Execution Context gets deleted
+step 4: In the end, Global Execution Context gets deleted as well
+
+
+//Call Stack (LIFO)
+- Its maintains Functions in stack when they are call
+- Also remove themn in LIFO manner from the stack when they are done
+
+
