@@ -1,0 +1,33 @@
+body{
+    padding: auto;
+    margin: auto;
+    background-color: #000
+  }
+  
+  #container{ 
+    display: grid;
+    place-items: center;
+    height: 20vh;
+    margin-top: 15%; 
+  } 
+  
+  .clock{
+    background-color: #1a1a1a;
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0f0;
+  }
+  
+  .dot{
+    font-size: 50px;
+    color: #0f0;
+  }
+  
+  h1{
+    color: #ccff33;
+    background-color: rgba(127, 255, 238, 0.295);
+  }
+  
