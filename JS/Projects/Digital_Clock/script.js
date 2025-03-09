@@ -1,25 +1,22 @@
 const clockHour = document.getElementById('clockHour');
-setInterval( () => {
-    let date = new Date()
-    hour = date.getHours();
-    clockHour.innerHTML = hour <= 12 ? hour : (hour - 12);
-}, 1000);
-
-const clockMin = document.getElementById('clockMinute');
-setInterval( () => {
-    let date = new Date()
-    clockMin.innerHTML = date.getMinutes();
-}, 1000);
-
-const clockSec = document.getElementById('clockSecond');
-setInterval( () => {
-    let date = new Date()
-    clockSec.innerHTML = date.getSeconds();
-}, 1000);
-
+const clockMinute = document.getElementById('clockMinute');
+const clockSecond = document.getElementById('clockSecond');
 const amPm = document.getElementById('amPm');
-setInterval( () => {
-    let date = new Date()
-    hour = date.getHours();
-    amPm.innerHTML = hour >= 12 ? 'PM' : 'AM';
-}, 1000);
+
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;     // Stores Remainder
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+  clockHour.innerHTML = String(hours).padStart(2, '0');
+  clockMinute.innerHTML = String(minutes).padStart(2, '0');
+  clockSecond.innerHTML = String(seconds).padStart(2, '0');
+  amPm.innerHTML = ampm;
+}
+
+updateClock(); 
