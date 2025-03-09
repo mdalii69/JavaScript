@@ -2,7 +2,7 @@ const clockHour = document.getElementById('clockHour');
 setInterval( () => {
     let date = new Date()
     hour = date.getHours();
-    clockHour.innerHTML = hour <= 12 ? clockHour.innerHTML = hour : clockHour.innerHTML = hour - 12;
+    clockHour.innerHTML = hour <= 12 ? hour : hour - 12;
 }, 1000);
 
 const clockMin = document.getElementById('clockMinute');
