@@ -17,6 +17,7 @@ function updateClock() {
   clockMinute.innerHTML = String(minutes).padStart(2, '0');
   clockSecond.innerHTML = String(seconds).padStart(2, '0');
   amPm.innerHTML = ampm;
+  requestAnimationFrame(updateClock);
 }
 
-setInterval(updateClock, 1000);
+updateClock();
