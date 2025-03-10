@@ -19,4 +19,4 @@ function updateClock() {
   amPm.innerHTML = ampm;
 }
 
-updateClock(); 
+setInterval(updateClock, 1000);
